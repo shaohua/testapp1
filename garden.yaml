@@ -4,7 +4,7 @@ region: us-central1
 health_path: /healthz
 port: 8080
 processes:
-  web: "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
+  web: "uvicorn src.main:app --host 0.0.0.0 --port ${PORT}"
 env:
   LOG_LEVEL: info
 cloud_run:
