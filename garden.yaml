@@ -1,0 +1,12 @@
+name: billing-admin
+environment: prod
+region: us-central1
+health_path: /healthz
+port: 8080
+processes:
+  web: "uvicorn main:app --host 0.0.0.0 --port ${PORT}"
+env:
+  LOG_LEVEL: info
+cloud_run:
+  min_instances: 0
+  max_instances: 3
